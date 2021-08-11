@@ -1,13 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+:root {
+  --clr-primary-2: #77F7BE;
+  --clr-primary-3: #5FDE9E;
+  --clr-primary-4: #25CC97;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+} 
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.link {
+  color: var(--clr-primary-4);
+  text-decoration: none;
 }
+
+
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font-family: var(--font);
+    font-size: 1.4rem;
+    font-weight: 300;
+    outline: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .dashed-loading {
+    position: relative;
+    height: 50px;
+    left:50%;
+    top:50vh;
+    transform: translateY(-50%);
+  }
+  .dashed-loading:after,
+  .dashed-loading:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  .dashed-loading:before {
+    z-index: 5;
+    border: 3px dashed var(--clr-primary-2);
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    -webkit-animation: dashed 1s linear infinite;
+    animation: dashed 1s linear infinite;
+  }
+  .dashed-loading:after {
+    z-index: 10;
+    border: 3px solid var(--clr-primary-2);
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    -webkit-animation: dashed 1s ease infinite;
+    animation: dashed 1s ease infinite;
+  }
+  @keyframes dashed {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .ce-primary-button,.ce-my-message-bubble,#ce-send-message-button {
+    background-color: var(--clr-primary-4)!important;
+  }
+  .ce-chat-title-text,.ce-chat-subtitle-text {
+    color: var(--clr-primary-4)!important;
+  }
+  .ce-chat-form-container{
+    font-family: 'Roboto'!important;
+    text-transform: uppercase;
+    color: #499167!important;
+  }
+  .ce-settings-container,.ce-text-input {
+    font-family: 'Roboto'!important;
+    color: var(--clr-primary-4)!important;
+  }
